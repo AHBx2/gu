@@ -1,0 +1,403 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://yourpanelassets.com/projects/yourpanel/css/signup/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://yourpanelassets.com/projects/yourpanel/css/signup/slick.css" />
+<link rel="stylesheet" type="text/css" href="https://yourpanelassets.com/projects/yourpanel/css/signup/slick-theme.css" />
+<link rel="stylesheet" type="text/css" href="https://gist.githubusercontent.com/AHBx2/1a175b4b3969abfff52dcc4393b4e1d8/raw/7edf95947486781f7a59b95d1c047711a0521cdd/gistfile1.css" /> 
+<link rel="stylesheet" type="text/css" href="https://yourpanelassets.com/projects/yourpanel/css/signup/animate.min.css" />
+<script type="text/javascript" src="https://yourpanelassets.com/projects/yourpanel/js/signup/AddEventStateBrowser.min.js"></script> 
+<script type="text/javascript" src="https://yourpanelassets.com/projects/yourpanel/js/signup/SendEventMetricsState.min.js"></script>
+<script type="text/javascript" src="https://yourpanelassets.com/projects/yourpanel/js/signup/URLComponent.js"></script>
+<script type="text/javascript" src="https://yourpanelassets.com/projects/yourpanel/js/signup/SendGoalsStatistics.js"></script>  
+<script type="text/javascript" src="https://yourpanelassets.com/projects/yourpanel/js/signup/jquery-2.2.0.min.js"></script>
+<style>
+
+header.header, footer.footer {
+  display: none;
+}
+@import url('http://fonts.cdnfonts.com/css/proxima-nova-2');
+.left, .right {
+  display: inline-block;
+  vertical-align: top;
+  margin:0 20px;
+  width: 50%;
+  }
+  .left .btn, .right .btn{
+  margin-top: 30px;
+  width: 100%;
+  font-size: 16px!important;
+  }
+  .left{
+  padding-right: 5px;
+  }
+  .right{
+  padding-left: 5px;
+  }
+  #login_btn{
+    background-color: #1b1e42;
+  /* font-family: "ProximaNova-Semibold"; */
+  font-family: 'Proxima Nova';                                           
+  font-size: 22px;
+  color: #9454d6;
+  border-color: #9454d6;
+  text-align: center;
+  width: 100%;
+  }
+  #reg_btn{
+  background-color: #1b1e42;
+  font-family: 'Proxima Nova';
+  font-size: 20px;
+  color: #9454d6;
+  border-color: #9454d6;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  height: auto;
+  width: 100%;
+  }
+  #registration #login_btn{
+  background-color: #1b1e42;
+  color: #9454d6;
+  }
+  #registration .recover{
+  margin-top: 13px;
+  color : #000;
+  }
+  #registration #login_btn:hover{
+  background-color: #1b1e42;
+  color: #fff;
+  }
+  .register-form .btn{
+  background-color: #1b1e42;
+  border-color: #9454d6;
+  color: #fff;
+  float: none;
+  display: inline-block;
+  }
+
+  .register-form .reg {
+  color: #1b1e42;
+  border-color: #9454d6;
+  background-color: #9454d6;
+  width: 100%!important;
+  font-size: 22px;
+  }
+
+  .register-form .reg:hover, #reg_btn:hover {
+  color: #1b1e42;
+  border-color: #9454d6;
+  background-color: #9454d6;
+  }
+  .page-login h1,
+  .page-login h3#get-free {
+  font-family: 'Proxima Nova';
+  font-weight: 700;
+  }
+  body, span, div, li, a, p, input, input::placeholder {
+  font-family: 'Proxima Nova' !important;
+  }
+
+.input-wr input.form-control:hover {
+    border-color: #9454d6 !important;
+    color: #e6d4f8 !important;
+}
+.input-wr input.form-control:focus {
+    border-color: #9454d6 !important;
+    color: #e6d4f8 !important;
+}
+.input-wr input.form-control::placeholder {
+    color: #9454d6 !important;
+}
+.input-wr input.form-control:active,
+.input-wr input.form-control:focus {
+    background-color: transparent !important;
+}
+header.header, footer.footer {
+    background: linear-gradient(to right, #9454d6, #1b1e42) !important;
+}
+.auth {
+    box-shadow: 0px 0px 10px rgba(148, 84, 214, 0.5) !important;
+    background-color: #131313;
+}
+header.text-center {
+  background-color: #131313;
+}
+#registration.register-form {
+  background-color: #131313 !important;
+}
+.flexboxes-column {
+    background: #000;
+}
+.logo_login {
+    text-align: center !important;
+}
+.logo_login img {
+  margin: 0 -6px !important;
+}
+
+
+
+
+</style>
+
+<div class="flexboxes-column">
+  <header class="text-center">
+    <div class="logo_login">
+      <a href="/">
+        <img height = "50" src = "{{ site['logo'] }}" alt="{{ site['name'] }}"/>
+      </a>
+    </div>
+    <h1>White and <span class="text-red">Safe</span> Promotion</h1>
+    <h3 id="get-free"><span class="text-red">Get Free service</span> Right after the registration</h3>
+    <span class="next" onclick="$(window).scrollTop($('.auth').offset().top)"></span>
+  </header>
+  <section class="text-center flexboxes-column">
+    <div class="auth">
+
+      <div id="registration" class="register-form" style="">
+        <span>Registration</span>
+        <!-- <div class="input-wr">
+<p style="color: #fff;">Registration is temporarily closed.<br>If you would like to create an account, please contact our support team: info@{{ site['name'] }}.com</p>
+</div> -->
+        <form id="UserLoginForm" {% if site['rtl'] %}class="rtl-form"{% endif %} action="" method="post">
+          {% if error %}
+          <div class="alert alert-dismissible alert-danger {% if site['rtl'] %} rtl-alert {% endif %}">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ errorMessage }}
+          </div>
+          {% endif %}
+          {% if success %}
+          <div class="alert alert-dismissible alert-success {% if site['rtl'] %} rtl-alert {% endif %}">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ successText }}
+          </div>
+          {% endif %} 
+
+          <div class="input-wr">
+            <div class="input text required">
+              <label for="username" class="img-form1"></label>
+              <input type="text" class="form-control" id="username" value="{{ data['login'] }}" name="RegistrationForm[login]" placeholder="{{ lang('signup.username') }}">
+            </div>
+          </div>
+
+          {% if name_fields %}
+          <div class="input-wr">
+            <div class="input text required">
+              <label for="firstname" class="img-form1"></label>
+              <input type="text" class="form-control" id="firstname" value="{{ data['first_name'] }}" name="RegistrationForm[first_name]" placeholder="{{ lang('signup.firstname') }}">
+            </div>
+          </div>
+          <div class="input-wr">
+            <div class="input text required">
+              <label for="lastname" class="img-form1"></label>
+              <input type="text" class="form-control" id="lastname" value="{{ data['last_name'] }}" name="RegistrationForm[last_name]" placeholder="{{ lang('signup.lastname') }}">
+            </div>
+          </div>
+          {% endif %}
+
+          <div class="input-wr">
+            <div class="input text required">
+              <label for="email" class="img-form1"></label>
+              <input type="email" class="form-control" id="email" value="{{ data['email'] }}" name="RegistrationForm[email]" placeholder="{{ lang('signup.email') }}">
+            </div>
+          </div>
+
+          {% if skype_field %}
+          <div class="input-wr">
+            <div class="input text required">
+              <label for="skype" class="img-form1"></label>
+              <input type="text" class="form-control" id="skype" value="{{ data['skype'] }}" name="RegistrationForm[skype]" placeholder="{{ lang('signup.skype') }}">
+            </div>
+          </div>
+          {% endif %}
+
+          <div class="input-wr">
+            <div class="input text required">
+              <label for="password" class="img-form1"></label>
+              <input type="password" class="form-control" id="password" name="RegistrationForm[password]" placeholder="{{ lang('signup.password') }}">
+            </div>
+          </div>
+
+          <div class="input-wr">
+            <div class="input text required">
+              <label for="confirm" class="img-form1"></label>
+              <input type="password" class="form-control" id="confirm" name="RegistrationForm[password_again]" placeholder="{{ lang('signup.confirm') }}">
+            </div>
+          </div>
+
+          {% if check_agreement %}
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" class="terms-accept-checkbox" name="RegistrationForm[termsofservice]"> {{ lang('signup.accept_terms_text') }} <a href="{{ page_url('terms') }}" target="_blank">{{ lang('terms.signup_checkbox') }}</a>
+              </label>
+            </div>
+          </div>
+          {% endif %}
+
+          {% if site['captcha'] %}
+          <br>
+          <br>
+          {{ captchaCode }}
+          {% endif %}
+
+
+
+
+
+          <div class="input-wr"  style="margin-top: 20px;"></div>
+
+          <div class="text-center">
+            <input type="hidden" name="_csrf" value="{{csrftoken}}">
+           {# <a href="/" class="btn" id="login_btn" type="submit">{{ lang('signup.button') }}</a>#}
+            <input class="btn" id="login_btn" type="submit" value="{{ lang('signup.button') }}" >
+          </div>
+          <div class="btn-wrp">
+            <a class="btn recover reg" href="{{ page_url('signin') }}">
+              {{ lang('signin.title') }}
+            </a>
+          </div>
+        </form>
+      </div><!--login-area-->
+
+
+      <div id="recovery" class="register-form" style="display:none">
+        <span>Recovery password</span>
+        <form action="/order/users/login" id="UserLoginForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/><input type="hidden" name="data[_Token][key]" value="71cdbcca2252d793b002b3d23809d735" id="Token604272619"/></div> 
+          <div class="input-wr">
+            <div class="input text"><label for="UserUsernameEmailRecovery" class=""></label><input name="data[User][username_email_recovery]" placeholder="E-mail or username" type="text" id="UserUsernameEmailRecovery"/></div>    </div>
+          <div class="input-wr" style="margin-top: 20px;">
+          </div>
+          <div class="btn-wrp">
+            <div class="left">
+              <input class="btn" type="submit" value="Send">
+            </div>
+            <div class="right">
+              <input class="btn" id="login_btn" type="button" value="Back to Login" onclick="$('#registration').css('display','none'); $('#recovery').css('display','none'); $('#login').css('display','block');">
+            </div>
+          </div>
+          <div style="display:none;"><input type="hidden" name="data[_Token][fields]" value="53bc664f1d8046a64b4cc94a5ca6ad54%3A" id="TokenFields169242256"/><input type="hidden" name="data[_Token][unlocked]" value="g-recaptcha-response" id="TokenUnlocked934999961"/></div></form></div>
+      <!--     <script src="//ulogin.ru/js/ulogin.js"></script><div id="uLogin_ba0826d7" data-uloginid="ba0826d7" style="text-align: center;background-color: #101010;padding-bottom: 20px;"></div>
+-->    <p class = "text-center">    
+  <span class="text-red">24/7</span> Online Support Chat<br>
+      <span>For registreted members</span>
+      </p>
+
+      <script>
+        $('.reg[type="button"]').on('click', function(){
+        window.history.pushState("", document.title, LocationAddQuery({tag: 'form_to_reg'}));
+        })
+        function rescaleCaptcha(){
+        let captcha = $('.g-recaptcha').find('iframe')
+        captcha.each(function(){
+        let width = $(this).closest('.g-recaptcha').width();
+        let scale;
+        console.log(width, 304)
+        if (width < 304) {
+        scale = (100-((304-width)*100/304))/100;
+        } else{
+        scale = 1.0; 
+        }
+
+        $(this).css('transform', 'scale(' + scale + ')');
+        $(this).css('-webkit-transform', 'scale(' + scale + ')');
+        $(this).css('transform-origin', '0 0');
+        $(this).css('-webkit-transform-origin', '0 0');
+        })
+        }
+
+        $(document).ready(function(){
+        setTimeout(function(){
+        rescaleCaptcha();
+        }, 500)
+        })
+        $( window ).resize(function() { rescaleCaptcha(); });
+        $('.btn.recover.reg, a.recover, #login_btn').on('click', function(){
+        rescaleCaptcha();
+        })
+      </script>       </div>
+  </section>
+  <footer>
+    <p class="text-center" style="color: #fff;">For any questions <span class="text-red">CONTACT US</span></p>
+    <div class="text-center">
+      <ul class="contact">
+        <li class = "email"><a href = "mailto:email@gucios.com">email@gucios.com</a></li>
+        <li class = "discord"><a href = "https://discord.com/invite/mtYvBxprGZ" target="_blank">{{ site['name'] }}</a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+
+{# 
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="well">
+        <form {% if site['rtl'] %}class="rtl-form"{% endif %} action="" method="post">
+          {% if error %}
+          <div class="alert alert-dismissible alert-danger {% if site['rtl'] %} rtl-alert {% endif %}">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ errorMessage }}
+          </div>
+          {% endif %}
+          {% if success %}
+          <div class="alert alert-dismissible alert-success {% if site['rtl'] %} rtl-alert {% endif %}">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ successText }}
+          </div>
+          {% endif %}
+          <div class="form-group">
+            <label for="username" class="control-label">{{ lang('signup.username') }}</label>
+            <input type="text" class="form-control" id="username" value="{{ data['login'] }}" name="RegistrationForm[login]">
+          </div>
+          {% if name_fields %}
+          <div class="form-group">
+            <label for="firstname" class="control-label">{{ lang('signup.firstname') }}</label>
+            <input type="text" class="form-control" id="firstname" value="{{ data['first_name'] }}" name="RegistrationForm[first_name]">
+          </div>
+          <div class="form-group">
+            <label for="lastname" class="control-label">{{ lang('signup.lastname') }}</label>
+            <input type="text" class="form-control" id="lastname" value="{{ data['last_name'] }}" name="RegistrationForm[last_name]">
+          </div>
+          {% endif %}
+          <div class="form-group">
+            <label for="email" class="control-label">{{ lang('signup.email') }}</label>
+            <input type="email" class="form-control" id="email" value="{{ data['email'] }}" name="RegistrationForm[email]">
+          </div>
+          {% if skype_field %}
+          <div class="form-group">
+            <label for="skype" class="control-label">{{ lang('signup.skype') }}</label>
+            <input type="text" class="form-control" id="skype" value="{{ data['skype'] }}" name="RegistrationForm[skype]">
+          </div>
+          {% endif %}
+          <div class="form-group">
+            <label for="password" class="control-label">{{ lang('signup.password') }}</label>
+            <input type="password" class="form-control" id="password" name="RegistrationForm[password]">
+          </div>
+          <div class="form-group">
+            <label for="confirm" class="control-label">{{ lang('signup.confirm') }}</label>
+            <input type="password" class="form-control" id="confirm" name="RegistrationForm[password_again]">
+          </div>
+          {% if site['captcha'] %}
+          {{ captchaCode }}
+          {% endif %}
+          {% if check_agreement %}
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" class="terms-accept-checkbox" name="RegistrationForm[termsofservice]"> {{ lang('signup.accept_terms_text') }} <a href="{{ page_url('terms') }}" target="_blank">{{ lang('terms.signup_checkbox') }}</a>
+              </label>
+            </div>
+          </div>
+          {% endif %}
+
+          <input type="hidden" name="_csrf" value="{{csrftoken}}">
+          <button type="submit" class="btn btn-primary">{{ lang('signup.button') }}</button>
+          <span class="pull-right pull-right-middle">{{ lang('signup.text') }} <a href="{{ page_url('signin') }}">{{ lang('signin.title') }}</a></span>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+#}
+
+
+
