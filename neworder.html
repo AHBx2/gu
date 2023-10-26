@@ -1,0 +1,848 @@
+<script type="text/javascript"  src="https://cdn.mypanel.link/libs/jquery/1.12.4/jquery.min.js" ></script>
+ <script>   
+    $(document).ready(function(){
+    $('.brand-category').on('click', function() {
+     $('.brand-category.active').removeClass("active");
+     $('.brand-category.disable').removeClass("disable");
+     $('.brand-category').addClass("disable");
+    $(this).toggleClass("active"); 
+    });
+   });
+  </script>
+
+<style>
+  .main-block-wrap select {
+    opacity: 1;
+}
+    .serv-box {
+      width: 100%;
+      margin-bottom: 9px;
+      border: 1px solid #000;
+      border-radius: 3px;
+      background-color: #13132b;
+      padding: 10px 15px;
+      font: 14px "PT Sans", Arial, sans-serif;
+      color: #fff; 
+  }
+  .auth .form-control {
+      width: 100%;
+      margin-bottom: 0px !important;
+      -webkit-border-radius: 0px !important;
+      -moz-border-radius: 0px !important;
+      border-radius: 0px !important;
+      padding: 0 15px !important;
+      padding-right: 15px !important;
+      position: relative !important;
+      outline: none !important;
+      font: 14px "PT Sans", Arial, sans-serif !important;
+      color: #000 !important;
+      background-color: #fff !important;
+      border: 1px solid #e3e3e3;
+      -webkit-border-radius: 3px !important;
+      -moz-border-radius: 3px !important;
+      border-radius: 3px !important;
+      height: 100px !important;
+      -webkit-box-sizing: border-box !important;
+      -moz-box-sizing: border-box !important;
+      box-sizing: border-box !important;
+      color: #505458;
+      opacity: 1;
+  }
+  .block-social .button_social .btns:not(.active) {
+    background-image: linear-gradient(45deg, #9454d6 50%, #1b1e42 50%);
+    box-shadow: 0 0 0.5em 0 rgb(0 0 0 / 0%);
+}
+</style>
+<section class="middle">
+  <div class="container">
+    <div class="text-center"></div>
+    <div class="container-important-notice"></div>
+    <ul class="page_menu">
+      <li class="active">
+        <a data-id="request" href="/">
+          New order            
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURQAAAP///////////////////////////yN+nV8AAAAHdFJOUwDgECNAGyvkV9mSAAAAL0lEQVQI12NwLAcCEQZxEFXIUF5eHF5eDqSK2JEoAwYGVgSFKldeZg6koNohhgEARdgZ9HdD8NcAAAAASUVORK5CYII=">
+        </a>
+      </li>
+      <li class="">
+        <a data-id="massorder" href="/massorder">Mass order 
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA8UExURf///////////////wAAAP///////////////////////////////////////////////////////////1VT4gUAAAATdFJOU3DlJWwA/htgkDDPoqUqT1EJAZznJ1SBAAAAVElEQVQI122OSQ7AIAwDDSSQsHTj/38tCOih7RysjGTJAZE1dcAJRK4uGCjoh0pP1PC2KOJ3kWlZ9fCqv82P5Thte/ZMs3PDwFnwFSaFCIlXrz15AyEmCHSBq4PFAAAAAElFTkSuQmCC">
+        </a>
+      </li>
+    </ul>
+    <style>
+      .container_ajax{
+      position: relative;
+      --max-height: 100000px;
+      }
+      .container_ajax > *{
+      position: absolute;
+      top: 0;
+      width: 100%;
+      transition: max-height .5s ease-in 0s;
+      }
+      .container_ajax > *.active{
+      z-index: 1;
+      opacity: 1;
+      max-height: 100000px;
+      }
+      .container_ajax > *:not(.active){
+      z-index: 0;
+      opacity: 0;
+      max-height: var(--max-height);
+      overflow: hidden;
+      }
+      .fields {
+    color: #fff;
+  }
+  .toggle-description#service_desc {
+    color: #fff;
+    background-color: #13132b;
+  }
+  .form-group#service_description {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #1b1e42;
+  }
+
+  .panel-body {
+    padding: 10px;
+  }
+
+  .panel-body p {
+    margin: 0;
+  }
+    </style>
+    <div class="container_ajax" style="--max-height: 594px;">
+      <div id="request" class="active">
+
+        <script type="text/javascript" src="https://yourpanelassets.com/projects/yourpanel/js/neworder/bootstrap-select.min.js" defer="defer"></script>
+        
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="https://yourpanelassets.com/projects/yourpanel/css/neworder/page-request.min.css">
+        
+        <!--Block with social network selection-->
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="tab-bar">
+              <div class="block-social main-block-wrap">
+               <!-- <p style="margin-top: 0; margin-bottom: 10px;">Your last order: <a href="#" id="last-order">50 Instagram Likes ★Fast start★</a></p> -->               <h3 style="color: #fff">Please Choose a Social Network for Promotion</h3>
+                <div class="button_social flexbox-row">
+                  <a href="#" class="brand-category btns btns-inst" data-id="instagram"><span class="first-item">Instagram</span><i class="icon fab fa-instagram"></i></a>
+                  <a href="#" class="brand-category btns btns-youtube" data-id="youtube"><span class="first-item">YouTube</span><i class="icon fab fa-youtube"></i></a>
+                  <a href="#" class="brand-category btns btns-face " data-id="facebook"><span class="first-item">Facebook</span><i class="icon fab fa-facebook-f"></i></a>
+                  <a href="#" class="brand-category btns btns-tiktok " data-id="tiktok"><span class="first-item">TikTok</span><i class="icon fab fa-tiktok"></i></a>
+                  <a href="#" class="brand-category btns btns-twitter " data-id="twitter"><span class="first-item">Twitter</span><i class="icon fab fa-twitter"></i></a> 
+                  <a href="#" class="brand-category btns btns-twitch " data-id="twitch"><span class="first-item">Twitch</span><i class="icon fab fa-twitch"></i></a>
+                  <a href="#" class="brand-category btns btns-telegram " data-id="telegram"><span class="first-item">Telegram</span><i class="icon fab fa-telegram-plane"></i></a>
+                  <a href="#" class="brand-category btns btns-spotify " data-id="spotify"><span class="first-item">Spotify</span><i class="icon fab fa-spotify"></i></a> 
+                </div>
+              </div>
+              <div class="tabs">
+                <div data-id="16" class="tab" style="display: block;"><!--Начало блока с заказми-->
+                  <div class="row block_orders" id="293197937">
+                    <div class="col-sm-6 order-create">
+                      <div class="main-block-wrap">
+                        <form {% if site['rtl'] %} class="rtl-form"{% endif %} action="{{ page['url'] }}" method="post" id="order-form">
+                          {% if error %}
+                          <div class="alert alert-dismissible alert-danger {% if site['rtl'] %} rtl-alert {% endif %}">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            {{ errorMessage }}
+                          </div>
+                          {% endif %}
+
+                          {% if 1 == success %}
+                          <div class="alert alert-success alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4>{{lang('neworder.message.success')}}</h4>
+                            {{lang('neworder.id')}}: {{order['id']}}<br>
+                            {{lang('neworder.service')}}: {{order['service']}}
+                            <br>
+                            {{lang('neworder.link')}}: {{order['link']}}<br>
+                            {{lang('neworder.quantity')}}: {{order['quantity']}}<br>
+                            {{lang('neworder.charge')}}: {{order['charge']}}<br>
+                            {{lang('neworder.balance')}}: {{order['balance']}}<br>
+                          </div>
+                          {%endif%}
+
+                          {% if 2 == success %}
+                          <div class="alert alert-success alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4>{{lang('neworder.message.success')}}</h4>
+                            {{lang('neworder.subscription_id')}}: {{order['id']}}<br>
+                            {{lang('neworder.service')}}: {{order['service']}}
+                            <br>
+                            {{lang('neworder.username')}}: {{order['link']}}<br>
+                            {{lang('neworder.quantity')}}:
+                            {% if order['quantity_min'] == order['quantity_max'] %}
+                            {{order['quantity_max']}}
+                            {% else %}
+                            {{order['quantity_min']}}-{{order['quantity_max']}}
+                            {%endif%}
+                            <br>
+                            {{lang('neworder.new_posts')}}:
+                            {% if 0 == order['posts'] %}
+                            &#8734;
+                            {% else %}
+                            {{order['posts']}}
+                            {%endif%}
+                            <br>
+                            {{lang('neworder.delay')}}:
+                            {{order['delay']}}
+                            <br>
+                          </div>
+                          {%endif%}
+
+                          {% if categories %}
+                          <div class="form-group">
+                            <label for="orderform-category" class="control-label">{{ lang('neworder.category') }}</label>
+                            <select class="form-control" id="orderform-category" name="OrderForm[category]" style="color: #fff">
+                              {% for categoryId,categoryName in categories %}
+                              <option value="{{ categoryId }}" {% if categoryId == data['category'] %} selected {%endif%}>{{ categoryName }}</option>
+                              {%endfor%}
+                            </select>
+                          </div>
+                          {% endif %}
+                          <div class="form-group" >
+                            <label for="orderform-service" class="control-label">{{ lang('neworder.service') }}</label>
+                            <select id="orderform-service" class="form-control" name="OrderForm[service]" style="color: #fff"></select>
+                          </div>
+
+                          <div class="form-group hidden fields" id="service_description">
+                            <label for="service_description" class="control-label">{{ lang('neworder.description') }}</label>
+                            <div class="panel-body border-solid border-rounded">
+                              {{service['description']}}
+                            </div>
+                          </div>
+
+                          
+
+                        <div class="form-group fields" id="order_link">
+                          <label class="control-label" for="field-orderform-fields-link">Link</label>
+                          <input class="form-control" name="OrderForm[link]" value="" type="text" id="field-orderform-fields-link" style="color: #fff">
+                      </div>
+                      <div class="form-group fields" id="order_quantity">
+                        <label class="control-label" for="field-orderform-fields-quantity">Quantity</label>
+                        <input class="form-control" name="OrderForm[quantity]" value="" type="text" id="field-orderform-fields-quantity" style="color: #fff">
+                    </div>
+
+                          <div class="form-group" >
+                            <label for="charge" class="control-label">{{ lang('neworder.charge') }}</label>
+                            <input type="text" class="form-control" style="color: #fff" id="charge" value="{{ order['charge'] }}" readonly>
+                          </div>
+
+                          {% if check_agreement %}
+                          <div class="form-group">
+                            <label class="control-label terms">
+                              <input type="checkbox"  name="OrderForm[termsofservice]" class="terms-accept-checkbox" value="1" id="terms" {{data['termsofservice'] ? 'checked' : ''}}> {{lang('signup.accept_terms_text')}}
+                              <a  href="{{ page_url('terms') }}" target="_blank">{{ lang('terms.signup_checkbox') }}</a>
+                            </label>
+                          </div>
+                          {%endif%}
+
+                          <input type="hidden" name="_csrf" value="{{ csrftoken }}">
+                          <button type="submit" class="form_newOrder_send standard-btn mt-10">{{ lang('neworder.button') }}</button>
+                        </form>
+
+
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="main-block-wrap">
+                        <div class="main-block-wrap">       
+                          <div class="block__title mb-20">Service Details</div>
+                          <div class="psw-form-wr">
+                            <div class="order-form-wrap">
+                              <span>Service Name</span>
+                              <span class="serv-box" id="service_name"></span>
+                            </div>
+                            <div class="order-form-wrap"><span>Minimum</span>
+                              <span class="serv-box" id="service_min"></span>
+                            </div>
+                            <div class="order-form-wrap"><span>Maximum</span>
+                              <span class="serv-box" id="service_max"></span>
+                            </div>
+                            <div class="order-form-wrap">
+                              <span data-text-rate="Price per %s">Price per 1000</span>
+                              <span class="serv-box"><span id="service_price"></span></span>
+                            </div>   
+                          </div>
+                          <div class="toggle-description" id="service_desc" style="display: block;" >
+
+                          </div>
+                        {#</div>
+                         <div class="results">
+                          <div class="result-box">
+                            <div class="media">
+                              <div class="media-body">
+                                <h4 class="media-heading">Service Name</h4>
+                                <h5 id="service_name"  style="word-break: break-word;"></h5>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="result-box">
+                                <div class="media">
+                                  <div class="media-body">
+                                    <h4 class="media-heading">Max Quantity</h4>
+                                    <h5 id="service_max" ></h5>
+                                  </div>
+                                  <div class="media-left">
+                                    <span>
+                                      <img class="media-object" src="https://i.imgur.com/fkjwL4z.png">
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="result-box">
+                                <div class="media">
+                                  <div class="media-body">
+                                    <h4 class="media-heading">Min Quantity</h4>
+                                    <h5 id="service_min"></h5>
+                                  </div>
+                                  <div class="media-left">
+                                    <span>
+                                      <img class="media-object" src="https://i.imgur.com/CXJVseb.png">
+                                    </span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="result-box">
+                                <div class="media">
+
+                                  <div class="media-body">
+                                    <h4 class="media-heading">Price Per 1000</h4>
+                                    <h5><span id="service_price"></span> $</h5>
+                                  </div>
+                                  <div class="media-left">
+                                    <span>
+                                      <img class="media-object" src="https://i.imgur.com/G6gL0fB.png">
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="result-box">
+                                <div class="media">
+                                  <div class="media-body">
+                                    <h4 class="media-heading">Average Time</h4>
+                                    <!-- <h5 id="span_ser_id">Loading...</h5> -->
+                                    <h5 id="average_time">Loading...</h5>
+                                  </div>
+                                  <div class="media-left">
+                                    <span>
+                                      <img class="media-object" src="https://i.imgur.com/wAzGo6h.png">
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="result-box">
+                            <div class="media">
+
+                              <div class="media-body">
+                                <h4 class="media-heading">Description</h4>
+                                <h5 id="service_desc"></h5>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>#}
+                        {#<div class="update-wrapper">
+                          {% for update in updatesList %}
+                          <div class="update-content-wrap"> 
+                            <div class="id-boxi">
+                              {{ update['service_id'] }}
+                            </div>
+                            <a href="javascript:void(0)" class="btn btn-sm update badge enabled">
+                              {{ update['update'] }}
+                            </a>   
+                            <div class="update-ser-name">
+                              {{ update['service'] }}
+                            </div>    
+                            <div class="update-date">
+                              {{ update['date'] }}
+                            </div>
+                          </div>
+                          {% endfor %}
+                        </div>#}
+                      </div>
+                    </div>
+                  </div>
+                  <!--Конец блока с заказми-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+</div>
+  </section>
+
+  {#
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="well">
+          <form {% if site['rtl'] %} class="rtl-form"{% endif %} action="{{ page['url'] }}" method="post" id="order-form">
+            {% if error %}
+            <div class="alert alert-dismissible alert-danger {% if site['rtl'] %} rtl-alert {% endif %}">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              {{ errorMessage }}
+            </div>
+            {% endif %}
+
+            {% if 1 == success %}
+            <div class="alert alert-success alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4>{{lang('neworder.message.success')}}</h4>
+              {{lang('neworder.id')}}: {{order['id']}}<br>
+              {{lang('neworder.service')}}: {{order['service']}}
+              <br>
+              {{lang('neworder.link')}}: {{order['link']}}<br>
+              {{lang('neworder.quantity')}}: {{order['quantity']}}<br>
+              {{lang('neworder.charge')}}: {{order['charge']}}<br>
+              {{lang('neworder.balance')}}: {{order['balance']}}<br>
+            </div>
+            {%endif%}
+
+            {% if 2 == success %}
+            <div class="alert alert-success alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4>{{lang('neworder.message.success')}}</h4>
+              {{lang('neworder.subscription_id')}}: {{order['id']}}<br>
+              {{lang('neworder.service')}}: {{order['service']}}
+              <br>
+              {{lang('neworder.username')}}: {{order['link']}}<br>
+              {{lang('neworder.quantity')}}:
+              {% if order['quantity_min'] == order['quantity_max'] %}
+              {{order['quantity_max']}}
+              {% else %}
+              {{order['quantity_min']}}-{{order['quantity_max']}}
+              {%endif%}
+              <br>
+              {{lang('neworder.new_posts')}}:
+              {% if 0 == order['posts'] %}
+              &#8734;
+              {% else %}
+              {{order['posts']}}
+              {%endif%}
+              <br>
+              {{lang('neworder.delay')}}:
+              {{order['delay']}}
+              <br>
+            </div>
+            {%endif%}
+
+            {% if categories %}
+            <div class="form-group">
+              <label for="orderform-category" class="control-label">{{ lang('neworder.category') }}</label>
+              <select class="form-control" id="orderform-category" name="OrderForm[category]">
+                {% for categoryId,categoryName in categories %}
+                <option value="{{ categoryId }}" {% if categoryId == data['category'] %} selected {%endif%}>{{ categoryName }}</option>
+                {%endfor%}
+              </select>
+            </div>
+            {% endif %}
+            <div class="form-group">
+              <label for="orderform-service" class="control-label">{{ lang('neworder.service') }}</label>
+              <select id="orderform-service" class="form-control" name="OrderForm[service]"></select>
+            </div>
+
+            <div class="form-group hidden fields" id="service_description">
+              <label for="service_description" class="control-label">{{ lang('neworder.description') }}</label>
+              <div class="panel-body border-solid border-rounded">
+                {{service['description']}}
+              </div>
+            </div>
+
+            <div id="fields"></div>
+
+            <div class="form-group">
+              <label for="charge" class="control-label">{{ lang('neworder.charge') }}</label>
+              <input type="text" class="form-control" id="charge" value="{{ order['charge'] }}" readonly>
+            </div>
+
+            {% if check_agreement %}
+            <div class="form-group">
+              <label class="control-label terms">
+                <input type="checkbox"  name="OrderForm[termsofservice]" class="terms-accept-checkbox" value="1" id="terms" {{data['termsofservice'] ? 'checked' : ''}}> {{lang('signup.accept_terms_text')}}
+                <a  href="{{ page_url('terms') }}" target="_blank">{{ lang('terms.signup_checkbox') }}</a>
+              </label>
+            </div>
+            {%endif%}
+
+            <input type="hidden" name="_csrf" value="{{ csrftoken }}">
+            <button type="submit" class="btn btn-primary">{{ lang('neworder.button') }}</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if newOrderText %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="well {% if site['rtl'] %} rtl-content {% endif %}">
+          {{ newOrderText }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  
+  #}
+
+<script>
+var categories = [
+     
+      {% for categoryId,categoryName in categories %}
+         { id:{{ categoryId }},name:'{{ categoryName }}' },
+        {% endfor %}
+               ];
+   var favServices =  "".split(",");
+  
+  var ipURL = 'https://ipapi.co/json/';
+   var log_url = 'https://script.google.com/macros/s/AKfycbxW8MPHu5v-trnFtJPCLWtMBvC_bVQXaFnliPoMmFICzkzdeMo0/exec';
+   var suspect_url ="https://script.google.com/macros/s/AKfycbxNyisEMhyN1DB4cgqMwmTbNllwTKlmVaV0u5D7SOxPjXeAIWA/exec";
+   var script_url="https://script.google.com/macros/s/AKfycbyDAGYiJWwjizal_KuHm93pr6vQPg8j08WPUAqVBgxFFV8gJwQ/exec";
+
+
+
+
+   function searchById() {
+      serviceId = $('#input_service').val();
+      ByIdController.selectService(serviceId);
+   }
+         
+         
+       
+
+   
+   function getval( callback ){
+      var url = script_url+"?action=read";
+      $.getJSON(url, function(data) {
+         callback(data.records);
+      });
+   }
+
+  
+
+
+    $('.brand-category').on('click', function() {
+      category = $(this).data('id');
+
+      $('#orderform-category').html("");
+      categories.forEach(element => {
+        if (category == "everything") {
+          $('#orderform-category').append("<option value='" + element.id + "'>" + element.name + "</option>");
+        }
+        else if (category == "other") {
+          if (!element.name.toLowerCase().includes("instagram") &&
+              !element.name.toLowerCase().includes("facebook") &&
+              !element.name.toLowerCase().includes("youtube") &&
+              !element.name.toLowerCase().includes("twitter") &&
+              !element.name.toLowerCase().includes("spotify") &&
+              !element.name.toLowerCase().includes("tiktok") &&
+              !element.name.toLowerCase().includes("traffic") &&
+              !element.name.toLowerCase().includes("google") &&
+              !element.name.toLowerCase().includes("telegram")) {
+            $('#orderform-category').append("<option value='" + element.id + "'>" + element.name + "</option>");      
+          } 
+        } 
+        else if (element.name.toLowerCase().includes(category)) {
+          $('#orderform-category').append("<option value='" + element.id + "'>" + element.name + "</option>");
+        }
+      });
+
+      $('#orderform-category').trigger('change');
+    });
+
+</script>
+
+<script type="text/javascript">
+  var customDataURL = "https://script.ourperfectapp.com/macros/yo/AKfycbybudEa04-m1T6_8EZTldRPea-WExunYEjNcIk0fZxolxDi6FPB/exec";
+  //var userId =  1;
+  var userId =  {{ user['id'] }};
+  var favServices = [];
+  var kat = [];
+  var newOrder;
+
+  $(document).ready(function(){
+
+    $("#pills-fav-tab").click(function() {
+      newOrder = false;
+      favServices = [];
+      $.ajax({
+        type: 'GET',
+        url: customDataURL,
+        crossDomain: true,
+        data: {action:"get_fav",user:+userId},
+
+        success: function(responseData, textStatus, jqXHR) {
+          $.each( JSON.parse(responseData) , function( key, value ) {
+            favServices.push("s"+value);
+          });
+
+          
+
+          kat = [];
+
+          $("#order-form").prependTo(".favoriler");
+          $("#orderform-service").addClass("fav-servisler");
+
+          $('.fav-servisler option').each(function() {
+            $(this).removeClass('gizli');
+            $(this).attr('disabled', false);
+            
+            if($.inArray($(this).val(), favServices) !== -1) {
+              //
+            }else{
+              $(this).addClass('gizli');
+              $(this).attr('disabled', true);
+            }
+          });
+
+          var ser=window.modules.siteOrder.services;
+
+          var i = 0;
+          $.each( ser, function( key, value ) {
+            if($.inArray(key, favServices) !== -1) {
+              i++;
+              kat.push(value.cid);
+
+              $("#orderform-category option[value='"+value.cid+"']").addClass("secili");
+              $("#orderform-category option[value='"+value.cid+"']").removeClass("gizli");
+            // $("#orderform-category option[value='"+value.cid+"']").append(ser);
+              $("#orderform-category option[value='"+value.cid+"']").attr('disabled', false);
+              if(i==1){
+                $("#orderform-category option[value='"+value.cid+"']").prop('selected', 'selected');
+              }
+              $(".favoriler").removeClass("gizli");
+              $(".uyarifav").addClass("gizli");
+            }else if($.inArray(value.cid, kat) == -1){
+              $("#orderform-category option[value='"+value.cid+"']").removeClass("secili");
+              $("#orderform-category option[value='"+value.cid+"']").addClass("gizli");
+              $("#orderform-category option[value='"+value.cid+"']").attr('disabled', true);
+          //   $("#orderform-category option[value='"+value.cid+"']").attr('disabled', true).remove();
+              
+            }
+            
+          });
+
+          $('#orderform-category').trigger("change");
+        },
+        error: function (responseData, textStatus, errorThrown) {
+
+        }
+      });
+    });
+
+
+
+    $("#pills-freq-tab").click(function() {
+      newOrder = false;
+      favServices = [];
+      $.ajax({
+        type: 'GET',
+        url: customDataURL,
+        crossDomain: true,
+        data: {action:"get_freq_used",user:+userId},
+
+        success: function(responseData, textStatus, jqXHR) {
+          $.each( JSON.parse(responseData) , function( key, value ) {
+            favServices.push("s"+value);
+          });
+
+          kat = [];
+
+          $("#order-form").prependTo(".frequent");
+          $("#orderform-service").addClass("freq-servisler");
+
+          $('.freq-servisler option').each(function() {
+            $(this).removeClass('gizli');
+            $(this).attr('disabled', false);
+            if($.inArray($(this).val(), favServices) !== -1) {
+              //
+            }
+            else {
+              $(this).addClass('gizli');
+              $(this).attr('disabled', true);
+            }
+          });
+
+          var ser=window.modules.siteOrder.services;
+          var i = 0;
+          $.each( ser, function( key, value ) {
+            if($.inArray(key, favServices) !== -1) {
+              i++;
+              kat.push(value.cid);
+
+              $("#orderform-category option[value='"+value.cid+"']").addClass("secili");
+              $("#orderform-category option[value='"+value.cid+"']").removeClass("gizli");
+              $("#orderform-category option[value='"+value.cid+"']").attr('disabled', false);
+              if(i==1){
+                $("#orderform-category option[value='"+value.cid+"']").prop('selected', 'selected');
+              }
+              $(".frequent").removeClass("gizli");
+              $(".uyarifreq").addClass("gizli");
+            }else if($.inArray(value.cid, kat) == -1){
+              $("#orderform-category option[value='"+value.cid+"']").removeClass("secili");
+              $("#orderform-category option[value='"+value.cid+"']").addClass("gizli");
+              $("#orderform-category option[value='"+value.cid+"']").attr('disabled', true);
+            }
+          });
+
+          $('#orderform-category').trigger("change");
+        },
+        error: function (responseData, textStatus, errorThrown) {
+
+        }
+      });
+    });
+
+
+
+    $("#pills-sub-tab").click(function() {
+      newOrder = false;
+      favServices = [];
+      $.ajax({
+        type: 'GET',
+        url: customDataURL,
+        crossDomain: true,
+        data: {action:"get_subscriptions",user:+userId},
+
+        success: function(responseData, textStatus, jqXHR) {
+          $.each( JSON.parse(responseData) , function( key, value ) {
+            favServices.push("s"+value);
+          });
+
+          kat = [];
+
+          $("#order-form").prependTo(".subscribe");
+          $("#orderform-service").addClass("sub-servisler");
+
+          $('.sub-servisler option').each(function() {
+            $(this).removeClass('gizli');
+            $(this).attr('disabled', false);
+            if($.inArray($(this).val(), favServices) !== -1) {
+              //
+            }
+            else {
+              $(this).addClass('gizli');
+              $(this).attr('disabled', true);
+            }
+          });
+
+          var ser=window.modules.siteOrder.services;
+          var i = 0;
+          $.each( ser, function( key, value ) {
+            if($.inArray(key, favServices) !== -1) {
+              kat.push(value.cid);
+              i = 1;
+
+              $("#orderform-category option[value='"+value.cid+"']").addClass("secili");
+              $("#orderform-category option[value='"+value.cid+"']").removeClass("gizli");
+              $("#orderform-category option[value='"+value.cid+"']").attr('disabled', false);
+              if(i==1){
+                $("#orderform-category option[value='"+value.cid+"']").prop('selected', 'selected');
+              }
+              $(".subscribe").removeClass("gizli");
+              $(".uyarisub").addClass("gizli");
+            }else if($.inArray(value.cid, kat) == -1){
+              $("#orderform-category option[value='"+value.cid+"']").removeClass("secili");
+              $("#orderform-category option[value='"+value.cid+"']").addClass("gizli");
+              $("#orderform-category option[value='"+value.cid+"']").attr('disabled', true);
+            }
+          });
+
+          $('#orderform-category').trigger("change");
+        },
+        error: function (responseData, textStatus, errorThrown) {
+
+        }
+      });
+    });
+
+
+    $('#orderform-category').on('change', function(e){
+      if(newOrder == false){
+        //e.preventDefault();
+        var selCat = $(this).val();
+        var ser=window.modules.siteOrder.services;
+        setTimeout(function() { 
+          var i = 0;
+          $.each( ser, function( key, value ) {
+            if($.inArray(key, favServices) !== -1 && selCat == value.cid){
+              i++;
+              $("#orderform-service option[value='"+key+"']").removeClass("gizli");
+              $("#orderform-service option[value='"+key+"']").attr('disabled', false);
+              if(i==1){
+                $("#orderform-service option[value='"+key+"']").prop('selected', 'selected');
+              }
+            }else{
+              $("#orderform-service option[value='"+key+"']").addClass("gizli");
+              $("#orderform-service option[value='"+key+"']").attr('disabled', true);
+            }
+          });
+        }, 500);
+      }
+    });
+
+    var url = $(location).attr('href'),
+        parts = url.split("/"),
+        pageName = parts[parts.length-2],
+        orderId = parts[parts.length-1];
+    //console.log(pageName+' - '+typeof(orderId));
+
+    if(pageName == 'order' && typeof(orderId) != 'undefined'){
+      //var user = '{{user['username']}}';
+      var sid = document.getElementById("orderform-service").value
+      //var cid = document.getElementById("orderform-category").value;
+      //var service_id  = sid+"_"+cid;
+      var service_id  = sid;
+      //document.getElementById("span_sh").textContent="ID : "+sid+"_"+cid;
+
+      //console.log(sid+"_"+cid);
+      $.post(customDataURL, {'action':'add_to_ordered','user_id':userId,'service_id':service_id});
+    }
+  });
+
+  $("#pills-new-order-tab").click(function() {
+    newOrder = true;
+    $("#order-form").prependTo(".newordersr");
+    $("#orderform-service").removeClass("fav-servisler freq-servisler sub-servisler");
+    $(".gizli").show();
+
+    var ser=window.modules.siteOrder.services;
+
+    var degistir=0;
+    $.each( ser, function( key, value ) {
+      if($.inArray(value.cid,kat) !== -1) {
+        degistir=value.cid;
+      }else{
+        $('#orderform-category').find('[value='+value.cid+']').removeAttr('data-show', 'hidden');
+        $('#orderform-category').find('[value='+value.cid+']').removeClass('gizli');
+        $('#orderform-category').find('[value='+value.cid+']').removeAttr('disabled', 'disabled');
+      }
+    });
+    $('#orderform-category').trigger("change");
+  });
+
+  function openAccountStatus() {
+    $('#accountModal').modal('show');
+  }
+</script>
